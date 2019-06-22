@@ -7,7 +7,7 @@
     [ Validate ]*/
     var input = $('.validate-input .input100');
 
-    $('.validate-form').on('submit',function(){
+    function validateForm(){
         var check = true;
 
         for(var i=0; i<input.length; i++) {
@@ -16,9 +16,25 @@
                 check=false;
             }
         }
-
         return check;
-    });
+    };
+
+    $('.login100-form-btn').on('click',function(){
+        if (validateForm()) {
+          $.post("https://dellinhostore.herokuapp.com/client/login", {"email": input[0].value, "password" : input[1].value}, function(response){
+            if (response.success) {
+              window.localStorage.setItem('logged',true);
+              window.localStorage.setItem('admin',response.admin);
+              window.localStorage.setItem('name',response.message.name);
+              window.localStorage.setItem('id',response.message.id);
+              window.location.href = "index.html";
+            }
+        });
+      }
+      else {
+        console.log('erro login');
+      }
+  });
 
 
     $('.validate-form .input100').each(function(){
@@ -55,6 +71,3 @@
 
 
   })(jQuery);
-// window.localStorage.setItem('logged',true);
-// window.localStorage.setItem('user','andy9822');
-console.log(window.localStorage);
