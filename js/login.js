@@ -23,10 +23,10 @@
         if (validateForm()) {
           $.post("https://dellinhostore.herokuapp.com/client/login", {"email": input[0].value, "password" : input[1].value}, function(response){
             if (response.success) {
-              window.localStorage.setItem('logged',true);
-              window.localStorage.setItem('admin',response.admin);
-              window.localStorage.setItem('name',response.message.name);
-              window.localStorage.setItem('id',response.message.id);
+              window.sessionStorage.setItem('logged',true);
+              window.sessionStorage.setItem('admin',response.admin);
+              window.sessionStorage.setItem('name',response.message.name);
+              window.sessionStorage.setItem('id',response.message.id);
               window.location.href = "index.html";
             }
         });
