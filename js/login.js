@@ -9,7 +9,6 @@
 
     function validateForm(){
         var check = true;
-
         for(var i=0; i<input.length; i++) {
             if(validate(input[i]) == false){
                 showValidate(input[i]);
@@ -31,7 +30,7 @@
               window.location.href = "index.html";
             }
             else {
-              console.log('erro login');
+              alert("Login inválido");
             }
         });
         console.log('post sent');
@@ -70,6 +69,8 @@
         $(thisAlert).removeClass('alert-validate');
     }
 
-
+    $( document ).ready(function() {
+      $.get("https://dellinhostore.herokuapp.com/client", function(response){});
+    })
 
   })(jQuery);
