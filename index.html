@@ -35,6 +35,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="js/auth.js"></script>
+		<script src="js/httprequest.js"></script>
 		<!--===============================================================================================-->
 	</head>
 
@@ -86,127 +87,14 @@
 					<thead>
 						<tr class="table100-head">
 							<th class="column1">Anúncio</th>
-							<th class="column2">Jogo</th>
-							<th class="column3">Plataforma</th>
-							<th class="column4">Price</th>
-							<th class="column5">Quantity</th>
-							<th class="column6">Total</th>
+							<th class="column2">Plataforma</th>
+							<th class="column3">Jogo</th>
+							<th class="column4">Gênero</th>
+							<th class="column5">Classificação Etária</th>
+							<th class="column6">Anunciante</th>
 						</tr>
 					</thead>
-					<tbody>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200398</td>
-								<td class="column2">Dragon Age: Origins</td>
-								<td class="column3">PS4</td>
-								<td class="column4">$999.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$999.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200397</td>
-								<td class="column2">Fifa 18</td>
-								<td class="column3">Xbox One</td>
-								<td class="column4">$756.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$756.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200396</td>
-								<td class="column2">Far Cry 5</td>
-								<td class="column3">PS4</td>
-								<td class="column4">$22.00</td>
-								<td class="column5">2</td>
-								<td class="column6">$44.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200392</td>
-								<td class="column2">Super Smash Bros. Ultimate</td>
-								<td class="column3">Swtich</td>
-								<td class="column4">$10.00</td>
-								<td class="column5">3</td>
-								<td class="column6">$30.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200391</td>
-								<td class="column2">Grand Theft Auto V</td>
-								<td class="column3">PS4</td>
-								<td class="column4">$199.00</td>
-								<td class="column5">6</td>
-								<td class="column6">$1494.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200390</td>
-								<td class="column2">Gears Of War 4</td>
-								<td class="column3">Xbox One</td>
-								<td class="column4">$699.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$699.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200389</td>
-								<td class="column2">Super Smash Bros. Ultimate</td>
-								<td class="column3">Switch</td>
-								<td class="column4">$2199.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$2199.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200388</td>
-								<td class="column2">Anthem</td>
-								<td class="column3">Xbox One</td>
-								<td class="column4">$999.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$999.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200387</td>
-								<td class="column2">Halo 4</td>
-								<td class="column3">Xbox One</td>
-								<td class="column4">$999.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$999.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200386</td>
-								<td class="column2">Pokemon: Lets Go Pikachu</td>
-								<td class="column3">Switch</td>
-								<td class="column4">$999.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$999.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200389</td>
-								<td class="column2">Call of Duty: WWII</td>
-								<td class="column3">Xbox One</td>
-								<td class="column4">$2199.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$2199.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200388</td>
-								<td class="column2">Monster Hunter: World</td>
-								<td class="column3">Xbox One</td>
-								<td class="column4">$999.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$999.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200387</td>
-								<td class="column2">Anthem</td>
-								<td class="column3">PS4</td>
-								<td class="column4">$999.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$999.00</td>
-							</tr>
-							<tr>
-								<td class="column1"><a href="./advert/200">#200386</td>
-								<td class="column2">Dragon Ball: Fighterz</td>
-								<td class="column3">PS4</td>
-								<td class="column4">$999.00</td>
-								<td class="column5">1</td>
-								<td class="column6">$999.00</td>
-							</tr>
-
+					<tbody id='tbody'>
 					</tbody>
 				</table>
 			</div>

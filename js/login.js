@@ -21,6 +21,7 @@
 
     $('.login100-form-btn').on('click',function(){
         if (validateForm()) {
+          console.log('sending post...');
           $.post("https://dellinhostore.herokuapp.com/client/login", {"email": input[0].value, "password" : input[1].value}, function(response){
             if (response.success) {
               window.sessionStorage.setItem('logged',true);
@@ -29,10 +30,11 @@
               window.sessionStorage.setItem('id',response.message.id);
               window.location.href = "index.html";
             }
+            else {
+              console.log('erro login');
+            }
         });
-      }
-      else {
-        console.log('erro login');
+        console.log('post sent');
       }
   });
 

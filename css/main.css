@@ -194,30 +194,30 @@ tbody tr:hover {
 
 .column1 {
   width: 26px;
-  padding-left: 40px;
+  text-align: center;
 }
 
 .column2 {
-  width: 245px;
-}
-
-.column3 {
   width: 100px;
 }
 
+.column3 {
+  width: 245px;
+}
+
 .column4 {
-  width: 110px;
-  text-align: right;
+  width: 100px;
+  text-align: center;
 }
 
 .column5 {
   width: 170px;
-  text-align: right;
+  text-align: center;
 }
 
 .column6 {
   width: 222px;
-  text-align: right;
+  text-align: center;
   padding-right: 62px;
 }
 
@@ -255,19 +255,19 @@ tbody tr:hover {
     top: 0;
   }
   table tbody tr td:nth-child(1):before {
-    content: "Date";
+    content: "Anúncio";
   }
   table tbody tr td:nth-child(2):before {
-    content: "Order ID";
+    content: "Gênero";
   }
   table tbody tr td:nth-child(3):before {
-    content: "Name";
+    content: "Plataforma";
   }
   table tbody tr td:nth-child(4):before {
-    content: "Price";
+    content: "Jogo";
   }
   table tbody tr td:nth-child(5):before {
-    content: "Quantity";
+    content: "Anunciante";
   }
   table tbody tr td:nth-child(6):before {
     content: "Total";
@@ -276,7 +276,7 @@ tbody tr:hover {
   .column4,
   .column5,
   .column6 {
-    text-align: left;
+    text-align: center;
   }
 
   .column4,
