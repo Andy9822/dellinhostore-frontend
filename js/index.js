@@ -10,9 +10,9 @@ request.onload = function () {
   var tableBody = document.getElementById('tbody')
 
   if (request.status >= 200 && request.status < 400 && response.success == true) {
-    console.log(response);
+    // console.log(response);
     response.message.forEach(advert => {
-      console.log(advert)
+      // console.log(advert)
       var tr = document.createElement('TR')
       var td1 = document.createElement('TD')
       var td2 = document.createElement('TD')
@@ -28,14 +28,17 @@ request.onload = function () {
       td4.setAttribute('class', 'column4');
       td5.setAttribute('class', 'column5');
       td6.setAttribute('class', 'column6');
+      td1.addEventListener("click", function() { redirectAdvert(advert.id); });
+      td6.addEventListener("click", function() { redirectProfile(advert.advertiser.email); });
+      td1.textContent = advert.id;
       td2.textContent = advert.platform.name;
       td3.textContent = advert.advertisedGame.name;
       td4.textContent = advert.advertisedGame.genre.name
       td5.textContent = advert.advertisedGame.minimumAge;
       td6.textContent = advert.advertiser.name;
-      href.href = advert.id;
-      href.appendChild(link);
-      td1.appendChild(href);
+      // href.href = advert.id;
+      // href.appendChild(link);
+      // td1.appendChild(href);
       tr.appendChild(td1)
       tr.appendChild(td2)
       tr.appendChild(td3)
@@ -47,5 +50,16 @@ request.onload = function () {
   }
 }
 
-// Send request
+function redirectAdvert(id) {
+  console.log('oi ' + id);
+}
+
+function redirectProfile(id) {
+  window.sessionStorage.setItem('clientEmail',id);
+  window.location.href = "user.html";
+}
+
+$( document ).ready(function() {
+    $('.username').text(window.sessionStorage.name)
+});
 request.send()
