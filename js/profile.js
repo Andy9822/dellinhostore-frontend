@@ -22,8 +22,22 @@
 
 });
 
+function viewMyProfile() {
+  window.sessionStorage.setItem('clientEmail',window.sessionStorage.loggedEmail);
+  window.location.href = "user.html";
+}
+
 $( document ).ready(function() {
+  $('.my-profile').on("click", function() { viewMyProfile()});
     $('.username').text(window.sessionStorage.name)
+
+    if (window.sessionStorage.clientEmail == window.sessionStorage.loggedEmail) {
+        $('.edit').show();
+        console.log('alo');
+    }
+    else {
+      $('.edit').hide();
+    }
 });
 
   })(jQuery);

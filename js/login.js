@@ -27,6 +27,7 @@
               window.sessionStorage.setItem('admin',response.admin);
               window.sessionStorage.setItem('name',response.message.name);
               window.sessionStorage.setItem('id',response.message.id);
+              window.sessionStorage.setItem('loggedEmail',response.message.email);
               window.location.href = "index.html";
             }
             else {
